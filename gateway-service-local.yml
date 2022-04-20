@@ -7,12 +7,12 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 spring:
-  application:
-    name: gateway-service
   cloud:
     gateway:
       routes:
-        - id: favoriteService
-          uri: lb://FAVORITE-SERVICE
+        - id: channelPayment
+          uri: lb://CHANNEL-PAYMENT
           predicates:
-          - Path=/favorites/**
+            - Path=/favorites/**
+            - Path=/transactions/**
+            - Path=/services/**

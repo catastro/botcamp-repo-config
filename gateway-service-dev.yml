@@ -7,7 +7,9 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: favoriteService
-          uri: lb://FAVORITE-SERVICE
+        - id: channelPayment
+          uri: lb://CHANNEL-PAYMENT
           predicates:
           - Path=/favorites/**
+          - Path=/transactions/**
+          - Path=/services/**
